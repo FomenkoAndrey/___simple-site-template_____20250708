@@ -210,13 +210,15 @@ a{
   background-color:#eeeff1;
 }
 .navbar__list{
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:flex;
   -ms-flex-wrap:wrap;
       flex-wrap:wrap;
   gap:0 30px;
   margin-left:-10px;
+}
+.navbar__list.active{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
 }
 .navbar__link{
   position:relative;
@@ -254,6 +256,58 @@ a{
       -ms-transform:scaleX(1);
           transform:scaleX(1);
   opacity:1;
+}
+.navbar__btn{
+  width:60px;
+  height:45px;
+  position:relative;
+  margin:50px auto;
+  -webkit-transform:rotate(0deg);
+      -ms-transform:rotate(0deg);
+          transform:rotate(0deg);
+  -webkit-transition:0.5s ease-in-out;
+  transition:0.5s ease-in-out;
+  cursor:pointer;
+}
+.navbar__btn span{
+  display:block;
+  position:absolute;
+  height:9px;
+  width:100%;
+  background:#34547a;
+  border-radius:9px;
+  opacity:1;
+  left:0;
+  -webkit-transform:rotate(0deg);
+      -ms-transform:rotate(0deg);
+          transform:rotate(0deg);
+  -webkit-transition:0.25s ease-in-out;
+  transition:0.25s ease-in-out;
+}
+.navbar__btn span:nth-child(1){
+  top:0px;
+}
+.navbar__btn span:nth-child(2){
+  top:18px;
+}
+.navbar__btn span:nth-child(3){
+  top:36px;
+}
+.navbar__btn.active span:nth-child(1){
+  top:18px;
+  -webkit-transform:rotate(135deg);
+      -ms-transform:rotate(135deg);
+          transform:rotate(135deg);
+}
+.navbar__btn.active span:nth-child(2){
+  opacity:0;
+  left:-60px;
+}
+.navbar__btn.active span:nth-child(3){
+  top:18px;
+  -webkit-transform:rotate(-135deg);
+      -ms-transform:rotate(-135deg);
+          transform:rotate(-135deg);
 }
 
 .hero{
@@ -406,6 +460,14 @@ a{
   .navbar{
     margin-bottom:144px;
   }
+  .navbar__list{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+  }
+  .navbar__btn{
+    display:none;
+  }
   .about{
     padding-top:110px;
     padding-bottom:90px;
@@ -430,6 +492,15 @@ a{
   }
   .navbar{
     margin-bottom:60px;
+  }
+  .navbar__list{
+    display:none;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+  }
+  .navbar__btn{
+    display:block;
   }
   .about{
     padding-top:60px;
